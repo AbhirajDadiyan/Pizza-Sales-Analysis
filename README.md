@@ -16,7 +16,7 @@ This project conducts a detailed analysis of pizza sales of a pizza stores to ga
 
 The dataset includes one table: ‘pizza sales’ that contains details about the pizza category, pizza size, cost, ingredients, quantity sold, order day and timestamps.
 Installation and Usage
-To run this project ensure you have PostgreSQL or any other tool capable of running SQL. You will need to create a new database in your DB and use the code provided in SQL code to create the tables then import the data from the CSV file. You will also need Microsoft Excel (anything after 2016 version should be good) to create visualizations. The CSV and excel file can be found here *insert link to google drive for csv and excel file*
+To run this project ensure you have PostgreSQL or any other tool capable of running SQL. You will need to create a new database in your DB and use the code provided in SQL code to create the tables then import the data from the CSV file. You will also need Microsoft Excel (anything after 2016 version should be good) to create visualizations. The CSV and excel file can be found here: https://drive.google.com/file/d/1WLcusWNUHV9qKeoHzQ-uqxLPbtx39nQl/view?usp=sharing 
 
 **Situation**
 
@@ -104,7 +104,8 @@ SELECT
 FROM
 	pizza_sales;
 ```
- 
+ ![image](https://github.com/AbhirajDadiyan/Pizza-Sales-Analysis/assets/136371147/10435881-8556-4eb0-801c-962c79ca0de5)
+
 --Creating a Query to find total pizzas sold
 
 
@@ -114,7 +115,7 @@ SELECT
 FROM
 	pizza_sales;
 ```
- 
+ ![image](https://github.com/AbhirajDadiyan/Pizza-Sales-Analysis/assets/136371147/a273deab-6d28-4e18-af85-bd7114b89d2e)
 
 
 
@@ -125,7 +126,8 @@ SELECT
 FROM
 	pizza_sales;
 ```
- 
+ ![image](https://github.com/AbhirajDadiyan/Pizza-Sales-Analysis/assets/136371147/d5bb4d64-2156-49ba-aaba-317d46c82ad0)
+
 --Creating a query to find average pizzas per order
 ```
 SELECT
@@ -133,7 +135,8 @@ SELECT
 FROM
 	pizza_sales;
 ```
- 
+ ![image](https://github.com/AbhirajDadiyan/Pizza-Sales-Analysis/assets/136371147/39fc1fd6-25ce-447f-acf4-874c44826cb1)
+
 --Creating a query to find average pizzas per order
 --Using CAST at both numirator and denominator to ensure
 --that the division is carried out in decimal arithmetic
@@ -145,7 +148,8 @@ SELECT
 FROM
 	pizza_sales;
 ```
- 
+ ![image](https://github.com/AbhirajDadiyan/Pizza-Sales-Analysis/assets/136371147/e9e3cc77-7f25-45c0-bdf6-ce5a22c2144b)
+
  
 --creating a query to find daily trend for total orders
 --using TO_CHAR to convert date values into the day of the week
@@ -160,7 +164,8 @@ FROM
 GROUP BY
     TO_CHAR(order_date, 'Day');
 ```
- 
+ ![image](https://github.com/AbhirajDadiyan/Pizza-Sales-Analysis/assets/136371147/17362d4d-4c53-4c2f-8679-98c53a0c9d98)
+
 --Creating a query to find the hourly trend for total orders
 --Using EXTRACT here because we are interested in a numeric value of the time/day
 ```
@@ -174,7 +179,8 @@ GROUP BY
 ORDER BY
     EXTRACT(HOUR FROM order_time);
 ```
- 
+ ![image](https://github.com/AbhirajDadiyan/Pizza-Sales-Analysis/assets/136371147/f947a4ff-e94c-4d8e-a971-4b37dbd20ff4)
+
 --creating a query to find percentage of sales by pizza category
 --using subquery to compute the total sales of all categories
 --this subquery runs once for the entire query, 
@@ -194,6 +200,7 @@ FROM
 GROUP BY
 	p.pizza_category;
 ```
+![image](https://github.com/AbhirajDadiyan/Pizza-Sales-Analysis/assets/136371147/30c88c9f-2882-44dc-abd5-79757a0abd36)
  
 
 --creating a query to filter total_sales_percentage by month
@@ -216,6 +223,7 @@ WHERE
 GROUP BY
 	p.pizza_category;
 ```
+![image](https://github.com/AbhirajDadiyan/Pizza-Sales-Analysis/assets/136371147/0471f52c-4b1b-465f-9943-3a504a4c4df6)
  
 
 --creating a query to find percentage of sales by Pizza Size
@@ -235,7 +243,9 @@ GROUP BY
 	p.pizza_size
 ORDER BY
 	total_sales_percentage_by_size DESC;
-``` 
+```
+![image](https://github.com/AbhirajDadiyan/Pizza-Sales-Analysis/assets/136371147/b591d0d3-c307-4c4d-a133-f4ffad4e3900)
+
 --query that can filter total_percentage_by_size with quarters
 --if you want to filter the query by month just change quarter to month and write the number of month you want to know the % sales of
 
@@ -258,7 +268,8 @@ GROUP BY
 ORDER BY
 	Total_sales_percentage_by_size DESC;
 ```
- 
+ ![image](https://github.com/AbhirajDadiyan/Pizza-Sales-Analysis/assets/136371147/9eb8ada1-b1ed-45d5-903a-2d9216ddb571)
+
 --creating a query to find total quantity of pizza sold by category
 ```
 SELECT
@@ -269,6 +280,8 @@ FROM
 GROUP BY
 	pizza_category;
 ```
+![image](https://github.com/AbhirajDadiyan/Pizza-Sales-Analysis/assets/136371147/39091281-4678-4ce8-83ce-959238b9a9a8)
+
  
 --creating a query to see TOP 5 best sellers by Pizza_name
 ```
@@ -283,7 +296,8 @@ ORDER BY
 	Total_Pizzas_Sold DESC
 LIMIT 5;
 ```
- 
+ ![image](https://github.com/AbhirajDadiyan/Pizza-Sales-Analysis/assets/136371147/de2912b8-d843-4701-8c3e-2b35da20322d)
+
 --Creating a query to see Bottom 5 sellers by pizza_name
 ```
 SELECT
@@ -297,8 +311,9 @@ ORDER BY
 	Total_Pizzas_Sold ASC
 LIMIT 5;
 ```
+![image](https://github.com/AbhirajDadiyan/Pizza-Sales-Analysis/assets/136371147/6fe8cb1b-67e3-488b-87c5-01b07662e408)
+
  
 **Results and Discussions**
 
-**Conclusion
-**
+**Conclusion**
