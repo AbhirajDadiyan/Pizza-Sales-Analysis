@@ -1,9 +1,9 @@
 # Pizza-Sales-Analysis
-Pizza Sales Analysis Project
 
-Introduction 
+**Introduction** 
 This project conducts a detailed analysis of pizza sales of a pizza stores to gain insights into the business performance. 
-Table of Contents
+
+**Table of Contents**
 1.	Data description
 2.	Installation and Usage
 3.	Situation
@@ -11,18 +11,25 @@ Table of Contents
 5.	SQL code
 6.	Results and Discussion
 7.	Conclusions
-Data Description
+   
+**Data Description**
+
 The dataset includes one table: ‘pizza sales’ that contains details about the pizza category, pizza size, cost, ingredients, quantity sold, order day and timestamps.
 Installation and Usage
 To run this project ensure you have PostgreSQL or any other tool capable of running SQL. You will need to create a new database in your DB and use the code provided in SQL code to create the tables then import the data from the CSV file. You will also need Microsoft Excel (anything after 2016 version should be good) to create visualizations. The CSV and excel file can be found here *insert link to google drive for csv and excel file*
-Situation
+
+**Situation**
+
 The business requires us to create the following KPI’s to gain performance insights. We need to create the following metrics:
+
 1.	Total Revenue
 2.	Average Order Value
 3.	Total Pizzas Sold
 4.	Total Orders
 5.	Average Pizzas Per Order
+   
 To understand various aspects of the pizza sales data to gain insights and understand key trends, I am going to create the following visualizations in Excel.
+
 1.	Daily Trend for Total Order
 2.	Hourly Trend for Total Orders
 3.	Percentage of Sales by Pizza Category
@@ -30,7 +37,8 @@ To understand various aspects of the pizza sales data to gain insights and under
 5.	Total Pizzas sold by Pizza Category
 6.	Top 5 Best Sellers by Total Pizzas 
 7.	Top 5 Worst Sellers by Total Pizzas Sold
-SQL Code
+   
+**SQL Code**
 /*
  Date Created: December 2nd, 2023
 Created by: Abhi S Dadiyan
@@ -86,7 +94,8 @@ SELECT
 FROM
     pizza_sales;
 ```
- 
+ ![image](https://github.com/AbhirajDadiyan/Pizza-Sales-Analysis/assets/136371147/62e39eb7-548e-4860-86df-71807eddf11a)
+
 --Creating a query to find average order value, Using DISTINCT COUNT of order id
 --to  make sure that the average isnt skewed, using ROUND and CAST for the same reason as previous query
 ```
@@ -289,6 +298,7 @@ ORDER BY
 LIMIT 5;
 ```
  
-Results and Discussions
-Conclusion
+**Results and Discussions**
 
+**Conclusion
+**
